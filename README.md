@@ -20,7 +20,7 @@ This project identifies candidate HSF-1 regulatory targets by scanning promoter 
 ├── results/
 │   ├── fimo_out_dedupes/  # FIMO output
 │   └── plots/             # Histograms and visualizations
-├── scripts/               # Pipeline scripts 01–06
+├── scripts/               # Pipeline scripts 01–07
 └── repo_outputs/          # Key outputs included in this repo
 ```
 
@@ -80,6 +80,13 @@ fimo --oc results/fimo_out_dedupes \
 python scripts/06_summarize_fimo_by_gene.py
 ```
 
+**7. Plot HSF-1 binding site distribution**
+```
+python scripts/07_plot_hsf1_binding_distribution.py
+```
+
+Generates per-chromosome histograms and an overlaid plot of HSF-1 binding site positions across all chromosomes. Output saved to `results/plots/hsf1_distribution/`.
+
 ---
 
 ## Outputs
@@ -87,6 +94,8 @@ python scripts/06_summarize_fimo_by_gene.py
 - **fimo_gene_summary.txt** — genes ranked by HSF-1 motif enrichment
 - **promoters_with_gene_names_dedup.txt** — deduplicated promoter dataset
 - **allPromoters_dedup.fasta** — promoter sequences used as FIMO input
+- **hsf1_sorted_by_chr_position.csv** — FIMO hits sorted by chromosome and position
+- **results/plots/hsf1_distribution/** — per-chromosome and overlaid binding site plots
 
 ---
 
