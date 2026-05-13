@@ -2,7 +2,6 @@ from pathlib import Path
 from Bio import SeqIO
 import re
 import matplotlib.pyplot as plt
-import os
 
 PATTERN_FORWARD = r"GAA..TTC..GAA"
 PATTERN_REVERSE = r"TTC..GAA..TTC"
