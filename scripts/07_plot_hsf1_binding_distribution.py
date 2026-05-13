@@ -63,7 +63,7 @@ def plot_individual(df: pd.DataFrame, outdir: Path) -> None:
 
         fig, ax = plt.subplots(figsize=(8, 4))
         fig.patch.set_facecolor("black")
-        ax.hist(group["start"], bins=200, color="green", alpha=0.5)
+        ax.hist(group["start"], bins=200, color="green", alpha=0.5, linewidth=0)
 
         chrom_label = chrom.replace("N2_", "")
         ax.set_title(chrom_label, color="white", fontsize=14)
@@ -85,12 +85,13 @@ def plot_overlaid(df: pd.DataFrame, outdir: Path) -> None:
     for chrom, color in zip(CHROM_ORDER, CHROM_COLORS):
         group = df[df["chromosome"] == chrom]
         ax.hist(
-            group["start"],
-            bins=200,
-            color=color,
-            alpha=0.5,
-            label=chrom.replace("N2_", ""),
-        )
+        group["start"],
+        bins=200,
+        color=color,
+        alpha=0.5,
+        label=chrom.replace("N2_", ""),
+        linewidth=0,
+    )
 
     ax.set_title("HSF-1 binding sites — all chromosomes", color="white", fontsize=14)
     ax.set_xlabel("Genomic Position (x10^7)", color="white", fontsize=11)
